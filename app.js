@@ -1,7 +1,5 @@
 var app = require('express')();
-
 var http = require('http').Server(app);
-
 var io = require('socket.io')(http);
 
 
@@ -19,7 +17,7 @@ io.on('connection', function(socket){
 });
 
 
-http.listen(3000, function() {
-	console.log("The application is running on port:3000");
+http.listen(4000, function() {
+	console.log("The application is running on port:4000");
 });
 
