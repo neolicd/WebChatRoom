@@ -6,6 +6,26 @@
 	</title>
 </head>
 <body>
-	Hello World!
+	<form>
+		<p id="message"></p>
+		<input type="text" id="m"/>
+		<input type="submit" value="POST"/>
+	</form>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
+		$('form').submit(function(){
+			socket.emit('message', $('#m').val());
+			$('#m').val('');
+			return false;
+		});
+
+
+		socket.on('message',function(msg){
+			$('#message').append('<li>' + msg + '</li>');
+		});
+	</script>
 </body>
 </html>
+
