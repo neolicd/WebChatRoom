@@ -11,10 +11,10 @@ Chat.prototype.setHomePage = function() {
 };
 
 Chat.prototype.setBroadCast = function() {
-	var io = this.io;
-	io.on('connection', function(socket){
+	var __this = this;
+	__this.io.on('connection', function(socket){
 		socket.on('message', function(msg){
-			io.emit('message', msg);
+			__this.io.emit('message', msg);
 		});
 	});
 };
