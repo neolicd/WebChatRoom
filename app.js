@@ -4,9 +4,9 @@ var Chat = function() {
 	this.io = require('socket.io')(this.http);
 }
 
-Chat.prototype.setHomePage = function() {
+Chat.prototype.setHomePage = function(fileName) {
 	this.app.get('/', function (req, res){
-		res.sendFile(__dirname+"/app.html");
+		res.sendFile(__dirname + "/" + fileName);
 	});
 };
 
@@ -19,16 +19,16 @@ Chat.prototype.setBroadCast = function() {
 	});
 };
 
-Chat.prototype.listen = function() {
-	this.http.listen(3000, function() {
-		console.log("The application is running on port:3000");
+Chat.prototype.listen = function(portNum) {
+	this.http.listen(portNum, function() {
+		console.log("The application is running on port:" + portNum);
 	});
 };
 
 var chat = new Chat();
-chat.setHomePage();
+chat.setHomePage("app.html");
 chat.setBroadCast();
-chat.listen();
+chat.listen(4000);
 
 
 
