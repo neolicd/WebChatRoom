@@ -10,8 +10,8 @@ Chat.prototype.setHomePage = function() {
 	});
 };
 
-Chat.prototype.setBroadCast = function(io) {
-	io = this.io;
+Chat.prototype.setBroadCast = function() {
+	var io = this.io;
 	io.on('connection', function(socket){
 		socket.on('message', function(msg){
 			io.emit('message', msg);
@@ -27,8 +27,7 @@ Chat.prototype.listen = function() {
 
 var chat = new Chat();
 chat.setHomePage();
-var io;
-chat.setBroadCast(io);
+chat.setBroadCast();
 chat.listen();
 
 
