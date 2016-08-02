@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FSE Chat</title>
+	<title>FSE Chat</title>
 </head>
 <body>
-    <form>
-        <p id="message"></p>
-        <input type="text" id="m"/>
-        <input type="submit" value="POST"/>
-    </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <p></p>
-    <script  src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script>
-        var Sock = function () {
-            this.socket = io();
-        };
+	<form>
+		<p id="message"></p>
+		<input type="text" id="m"/>
+		<input type="submit" value="POST"/>
+	</form>
+	<script src="/socket.io/socket.io.js"></script>
+	<!-- <script src="jquery-3.1.0.min.js"></script> -->
+	<script  src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script>
+		var Sock = function () {
+			this.socket = io();
+		};
 
-        Sock.prototype.setSubmitAction = function() {
-            var __this = this;
-            $('form').submit(function() {
-                __this.socket.emit('message', $('#m').val());
-                $('#m').val('');
-                return false;
-            });
-        };
+		Sock.prototype.setSubmitAction = function() {
+			var __this = this;
+			$('form').submit(function() {
+				__this.socket.emit('message', {msg:$('#m').val()});
+				$('#m').val('');
+				return false;
+			});
+		};
 
-        Sock.prototype.setReceiveAction = function() {
-            this.socket.on('message',function(msg){
-                $('#message').append('<li>' + msg + '</li>');
-            });
-        };
+		Sock.prototype.setReceiveAction = function() {
+			this.socket.on('message',function(item){
+				$('#message').append('<li>' + item.msg + '</li>');
+			});
+		};
 
-        var socket = new Sock();
-        socket.setSubmitAction();
-        socket.setReceiveAction();
-    </script>
+		var socket = new Sock();
+		socket.setSubmitAction();
+		socket.setReceiveAction();
+	</script>
 </body>
 </html>
 
