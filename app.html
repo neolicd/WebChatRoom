@@ -1,119 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FSE Chat Room</title>
-	<style>
-		* {
-			padding: 0;
-			margin : 0;
-			box-sizing: border-box;
-		}
+    <title>FSE Chat Room</title>
+    <style>
+        * {
+            padding: 0;
+            margin : 0;
+            box-sizing: border-box;
+        }
 
-		.main {
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			border: 1px solid red;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: center;
-		}
+        .main {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-		.words {
-			width: 100%;
-			border: 1px solid green;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			flex: 1;
-		}
+        .words {
+            width: 100%;
+            border: 1px solid green;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
 
-		.words #messages {
-			width: 90%;
-			flex: 5;
-			border: 1px solid orange;
-			margin-top: 30px;
-		}
+        .words #messages {
+            width: 90%;
+            flex: 5;
+            border: 1px solid orange;
+            margin-top: 30px;
+        }
 
-		#messages li {
-			background-color: #E6E6E6;
-			list-style-type: none;
-		}
+        #messages li {
+            background-color: #E6E6E6;
+            list-style-type: none;
+        }
 
-		.words textarea {
-			width: 90%;
-			font-size: 30px;
-			background-color: #A9E2F3;
-			margin-top: 10px;
-			margin-bottom: 20px;
-			flex: 2;
+        .words textarea {
+            width: 90%;
+            font-size: 30px;
+            background-color: #A9E2F3;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            flex: 2;
 
-		}
-
-
-		.btn {
-			width: 100%;
-			border: 1px solid yellow;
-			display: flex;
-			justify-content: center;
-			background-color: #D8D8D8;
-			margin: 10px;
-		}
-
-		.btn button {
-			width: 300px;
-			height: 60px;
-			background-color: #00BFFF;
-			border-style: none;
-			border-radius: 10px;
-			font-size: 30px;
-			color: white;
-			margin: 5px;
-		}
+        }
 
 
+        .btn {
+            width: 100%;
+            border: 1px solid yellow;
+            display: flex;
+            justify-content: center;
+            background-color: #D8D8D8;
+            margin: 10px;
+        }
 
-	</style>
+        .btn button {
+            width: 300px;
+            height: 60px;
+            background-color: #00BFFF;
+            border-style: none;
+            border-radius: 10px;
+            font-size: 30px;
+            color: white;
+            margin: 5px;
+        }
+
+
+
+    </style>
 </head>
 <body>
-	<div class="main">
-		<span class="words">
-			<ul id="messages"></ul>
-			<textarea id="m"></textarea>
-		</span>
-		<span class="btn">
-			<button>POST</button>
-		</span>
-	</div>
+    <div class="main">
+        <span class="words">
+            <ul id="messages"></ul>
+            <textarea id="m"></textarea>
+        </span>
+        <span class="btn">
+            <button>POST</button>
+        </span>
+    </div>
 
 
-	<script src="/socket.io/socket.io.js"></script>
-	<!-- <script src="jquery-3.1.0.min.js"></script> -->
-	<script  src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<script>
-		var Sock = function () {
-			this.socket = io();
-		};
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="jquery-3.1.0.min.js"></script> -->
+    <script  src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        var Sock = function () {
+            this.socket = io();
+        };
 
-		Sock.prototype.setSubmitAction = function() {
-			var __this = this;
-			$('button').click(function() {
-				__this.socket.emit('chat message', {msg:$('#m').val()});
-				$('#m').val('');
-			});
-		};
+        Sock.prototype.setSubmitAction = function() {
+            var __this = this;
+            $('button').click(function() {
+                __this.socket.emit('chat message', {msg:$('#m').val()});
+                $('#m').val('');
+            });
+        };
 
-		Sock.prototype.setReceiveAction = function() {
-			this.socket.on('chat message',function(item){
-				$('#messages').append('<li>' + item.msg + '</li>');
-			});
-		};
+        Sock.prototype.setReceiveAction = function() {
+            this.socket.on('chat message',function(item){
+                $('#messages').append('<li>' + item.msg + '</li>');
+            });
+        };
 
-		var socket = new Sock();
-		socket.setSubmitAction();
-		socket.setReceiveAction();
-	</script>
+        var socket = new Sock();
+        socket.setSubmitAction();
+        socket.setReceiveAction();
+    </script>
 </body>
 </html>
 
