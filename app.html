@@ -34,12 +34,41 @@
             flex: 5;
             border: 1px solid orange;
             margin-top: 30px;
+            overflow-y: scroll;
         }
 
         #messages li {
-            background-color: #E6E6E6;
+            background-color: #F2F2F2;
             list-style-type: none;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
         }
+
+        li .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header .name {
+            margin: 5px;
+            font-weight: bold;
+            color: #6E6E6E;
+        }
+
+        .header .time {
+            color: #A4A4A4;
+        }
+
+        li p {
+            margin: 10px;
+            color: #848484;
+        }
+
+        li .name,.time,p{
+            border: 1px solid brown;
+        }
+
 
         .words textarea {
             width: 90%;
@@ -92,6 +121,32 @@
     <!-- <script src="jquery-3.1.0.min.js"></script> -->
     <script  src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script>
+        var Method = {};
+        Method.formatMessage = function(item) {
+            return '<li>' + '<div class="header">' +
+                                '<span class="name">' + item.name + '</span>' + 
+                                '<span class="time">' + item.time + '</span>' +
+                            '</div>' +
+                            '<p>' + item.msg + '</p>' +
+
+                  '</li>';
+        };
+
+        Method.formatDate = function(date) {
+            var h = date.getHours();
+            var ap = '';
+            if(h < 12) {
+                ap = 'AM';
+            }
+            else {
+                h -= 12;
+                ap = 'PM';
+            }
+            return date.getMonth() + '.' + date.getDate() + '.' +date.getFullYear() +
+                    ' ' + h + ':' + date.getMinutes() + ap;
+            return "tiem";
+        };
+
         var Sock = function () {
             this.socket = io();
         };
@@ -99,14 +154,14 @@
         Sock.prototype.setSubmitAction = function() {
             var __this = this;
             $('button').click(function() {
-                __this.socket.emit('chat message', {msg:$('#m').val()});
+                __this.socket.emit('chat message', {name:'Tom',time:Method.formatDate(new Date()),msg:$('#m').val()});
                 $('#m').val('');
             });
         };
 
         Sock.prototype.setReceiveAction = function() {
             this.socket.on('chat message',function(item){
-                $('#messages').append('<li>' + item.msg + '</li>');
+                $('#messages').append(Method.formatMessage(item));
             });
         };
 
