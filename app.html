@@ -37,12 +37,15 @@
             overflow-y: scroll;
         }
 
+
         #messages li {
             background-color: #F2F2F2;
             list-style-type: none;
             border: 1px solid black;
             display: flex;
             flex-direction: column;
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
 
         li .header {
@@ -144,7 +147,6 @@
             }
             return date.getMonth() + '.' + date.getDate() + '.' +date.getFullYear() +
                     ' ' + h + ':' + date.getMinutes() + ap;
-            return "tiem";
         };
 
         var Sock = function () {
@@ -161,7 +163,9 @@
 
         Sock.prototype.setReceiveAction = function() {
             this.socket.on('chat message',function(item){
-                $('#messages').append(Method.formatMessage(item));
+                var $messages = $('#messages');
+                $messages.append(Method.formatMessage(item));
+                $messages.scrollTop($messages.get(0).scrollHeight);
             });
         };
 
