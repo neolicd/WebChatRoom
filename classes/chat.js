@@ -7,11 +7,20 @@ Chat.prototype.init = function() {
 	this.io = require('socket.io')(this.http);
 	this.record = new (require('./record.js'))();
 	this.app.use(this.express.static('public'));
+	this.app.set('view engine', 'ejs');
 };
 
-Chat.prototype.setHomePage = function(filePath) {
-	this.app.get('/', function (req, res){
-		res.sendFile(filePath);
+Chat.prototype.setLoginPage = function(fileName) {
+	this.app.get('/', function(req, res) {
+		res.render(fileName);
+	});
+};
+
+Chat.prototype.setMainPage = function(fileName) {
+	this.app.get('/main', function(req, res) {
+		res.render(fileName, {
+			uID: req.query.uID
+		});
 	});
 };
 
