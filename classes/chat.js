@@ -5,7 +5,7 @@ Chat.prototype.init = function() {
     this.app = this.express();
     this.http = require('http').Server(this.app);
     this.io = require('socket.io')(this.http);
-    this.record = new (require('./record.js'))();
+    this.record = require('./record')();
     this.app.use(this.express.static('public'));
     this.app.set('view engine', 'ejs');
 
@@ -51,4 +51,8 @@ Chat.prototype.listen = function(portNum) {
     });
 };
 
-module.exports = Chat;
+var create = function() {
+    return new Chat();
+}
+
+module.exports = create;

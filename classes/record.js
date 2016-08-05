@@ -23,4 +23,8 @@ Record.prototype.save = function() {
     fs.writeFileSync(__dirname + '/../database/record.json', JSON.stringify(this.messages, null, 2));
 };
 
-module.exports = Record;
+var create = function() {
+    return new Record();
+}
+
+module.exports = create;
