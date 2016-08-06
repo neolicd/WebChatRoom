@@ -3,80 +3,80 @@
 <head>
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body, html {
-    height: 100%;
+	height: 100%;
 }
 
 body {
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	border: 1px solid red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
 form {
-    border: 1px solid black;
-    width: 600px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: skyblue;
+	border: 1px solid black;
+	width: 600px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: skyblue;
 }
 
 
 input {
-    border: 1px solid red;
-    width: 500px;
-    font-size: 30px;
-    margin: 10px;
-    color: gray;
+	border: 1px solid red;
+	width: 500px;
+	font-size: 30px;
+	margin: 10px;
+	color: gray;
 }
 
 button {
-    border: 1px solid blue;
-    width: 30%;
-    height: 10%;
-    font-size: 30px;
-    font-weight: bold;
+	border: 1px solid blue;
+	width: 30%;
+	height: 10%;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 </style>
 <title>Login</title>
 </head>
 <body>
-    <form action="/main" method="post">
-        <input id="userID" type="text" name="uID" value="please type your name here">
-        <button>login</button>
-    </form>
-    <script src="/javascripts/jquery-3.1.0.min.js"></script>
-    <script>
-        var Method = {};
-        Method.setTextAction = function(defaultText) {
-        $('#userID').focusin(function() {
-            if($(this).val() == defaultText){
-                $(this).val('');
-                $(this).css('color', 'black');
-            }
-        });
+	<form action="/main" method="post">
+		<input id="userID" type="text" name="uID" value="please type your name here">
+		<button>login</button>
+	</form>
+	<script src="/javascripts/jquery-3.1.0.min.js"></script>
+	<script>
+		var Method = {};
+		Method.setTextAction = function(defaultText) {
+		$('#userID').focusin(function() {
+			if($(this).val() == defaultText){
+				$(this).val('');
+				$(this).css('color', 'black');
+			}
+		});
 
-        $('#userID').focusout(function() {
-            if($(this).val() == '') {
-                $(this).css('color', 'gray');
-                $(this).val(defaultText);
-            }
-        });
-        };
+		$('#userID').focusout(function() {
+			if($(this).val() == '') {
+				$(this).css('color', 'gray');
+				$(this).val(defaultText);
+			}
+		});
+		};
 
-        Method.setTextAction("please type your name here");
+		Method.setTextAction("please type your name here");
 
-    </script>
+	</script>
 </body>
 </html>

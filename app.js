@@ -1,4 +1,4 @@
-var chat = require('./classes/chat')();
+var Chat = require('./classes/chat'), chat = new Chat();
 chat.init();
 chat.setLoginPage('login');
 chat.setMainPage('app');

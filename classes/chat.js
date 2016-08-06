@@ -5,7 +5,23 @@ Chat.prototype.init = function() {
     this.app = this.express();
     this.http = require('http').Server(this.app);
     this.io = require('socket.io')(this.http);
-    this.record = require('./record')();
+
+
+
+    var Datastore = require('nedb');
+    this.db = new Datastore({filename: 'database/record'});
+    var __this = this;
+    this.db.loadDatabase(function(err){
+        if(err) throw err;
+        __this.db.remove({}, {multi:true}, function(err, numRemoved) {
+            if(err) throw err;
+        //console.log('database deleted!');
+    });
+
+    });
+
+
+    
     this.app.use(this.express.static('public'));
     this.app.set('view engine', 'ejs');
 
@@ -31,15 +47,16 @@ Chat.prototype.setMainPage = function(fileName) {
 Chat.prototype.setBroadCast = function() {
     var __this = this;
     __this.io.on('connection', function(socket){
-        var items = __this.record.getItems();
-        var len = items.length;
-        for(var i = 0; i < len; i++) {
-            socket.emit('chat message', items[i]);
-        }
+        __this.db.find({}, function(err, docs) {
+            if(err) throw err;
+            var len = docs.length;
+            for(var i = 0; i<len; i++){
+                socket.emit('chat message', docs[i]);
+            }
+        })
 
         socket.on('chat message', function(item){
-            __this.record.add(item);
-            //__this.record.save();
+            __this.db.insert(item);
             __this.io.emit('chat message', item);
         });
     });
@@ -51,8 +68,5 @@ Chat.prototype.listen = function(portNum) {
     });
 };
 
-var create = function() {
-    return new Chat();
-}
 
-module.exports = create;
+module.exports = Chat;
