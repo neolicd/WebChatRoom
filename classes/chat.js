@@ -10,15 +10,14 @@ Chat.prototype.init = function() {
 
     var Datastore = require('nedb');
     this.db = new Datastore({filename: 'database/record'});
-    var __this = this;
     this.db.loadDatabase(function(err){
         if(err) throw err;
-        __this.db.remove({}, {multi:true}, function(err, numRemoved) {
-            if(err) throw err;
-        //console.log('database deleted!');
     });
 
+    this.db.remove({}, {multi:true}, function(err, numRemoved) {
+        if(err) throw err;
     });
+
 
 
     
