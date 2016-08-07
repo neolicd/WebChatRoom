@@ -9,23 +9,18 @@ Chat.prototype.init = function() {
     var cookieParser = require('cookie-parser');
     this.app.use(cookieParser());
 
-
-
     var Datastore = require('nedb');
     this.db = new Datastore({filename: 'database/record'});
     this.db.loadDatabase(function(err){
         if(err) throw err;
     });
-
     this.db.remove({}, {multi:true}, function(err, numRemoved) {
         if(err) throw err;
     });
 
-
-
-
     
     this.app.use(this.express.static('public'));
+    
     this.app.set('view engine', 'ejs');
 
     var bodyParser = require('body-parser');
