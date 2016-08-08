@@ -5,6 +5,7 @@ Chat.prototype.init = function() {
     this.app = this.express();
     this.http = require('http').Server(this.app);
     this.io = require('socket.io')(this.http);
+    this.nextItemNum = 0;
 
     var cookieParser = require('cookie-parser');
     this.app.use(cookieParser());
@@ -60,15 +61,17 @@ Chat.prototype.setMainPage = function(fileName) {
 Chat.prototype.setBroadCast = function() {
     var __this = this;
     __this.io.on('connection', function(socket){
-        __this.db.find({}, function(err, docs) {
+        __this.db.find({}).sort({num:1}).exec(function(err, docs) {
             if(err) throw err;
             var len = docs.length;
-            for(var i = 0; i<len; i++){
+            //console.log(docs);
+            for(var i = 0; i < len; i++) {
                 socket.emit('chat message', docs[i]);
             }
-        })
+        });
 
         socket.on('chat message', function(item){
+            item.num = __this.nextItemNum++;
             __this.db.insert(item);
             __this.io.emit('chat message', item);
         });

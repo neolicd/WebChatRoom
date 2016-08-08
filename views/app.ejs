@@ -54,7 +54,7 @@
         Sock.prototype.setSubmitAction = function() {
             var __this = this;
             $('button').click(function() {
-                __this.socket.emit('chat message', {name:__this.uID,time:Method.formatDate(new Date()),msg:$('#m').val()});
+                __this.socket.emit('chat message', {name:__this.uID,time:Method.formatDate(new Date()),msg:$('#m').val(),num:0});
                 $('#m').val('');
             });
         };
@@ -73,7 +73,7 @@
         socket.setUserID('<%= uID %>');
         socket.setSubmitAction();
         socket.setReceiveAction();
-        console.log(socket.uID);
+        //console.log(socket.uID);
     </script>
 </body>
 </html>
