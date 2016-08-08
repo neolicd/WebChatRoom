@@ -1,36 +1,24 @@
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"4","num":3,"_id":"1AjZtxjQ57aJZZl2"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"7","num":7,"_id":"53ZAQ56xeMEdXyMb"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"","num":5,"_id":"GVi5UTDVKG10CxEJ"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"6","num":6,"_id":"IElXkkhyyok1LI1S"}
-{"name":"lily","time":"8.8.2016 1:2PM","msg":"4","num":13,"_id":"JmfQ1maH0e8LPrxX"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"8","num":8,"_id":"OHlD3PsRBTMU6FOy"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"2","num":1,"_id":"QnjCnRMip9lDc2rN"}
-{"name":"lily","time":"8.8.2016 1:2PM","msg":"1","num":9,"_id":"TpyxNZjnkRw7hp1z"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"1","num":0,"_id":"Ts0hDId3Ij6ivz4d"}
-{"name":"lily","time":"8.8.2016 1:2PM","msg":"2","num":11,"_id":"XpEaluRb1ebBsM4k"}
-{"name":"lily","time":"8.8.2016 1:2PM","msg":"","num":12,"_id":"bysIJuGSoL8gdm7V"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"3","num":2,"_id":"c2xuGYrch5APFDYk"}
-{"name":"neolicd","time":"8.8.2016 1:2PM","msg":"5","num":4,"_id":"j3iU3UjDEn5gdvbY"}
-{"name":"lily","time":"8.8.2016 1:2PM","msg":"","num":10,"_id":"xttzwhm7SSYXWVl1"}
-{"$$deleted":true,"_id":"1AjZtxjQ57aJZZl2"}
-{"$$deleted":true,"_id":"53ZAQ56xeMEdXyMb"}
-{"$$deleted":true,"_id":"GVi5UTDVKG10CxEJ"}
-{"$$deleted":true,"_id":"IElXkkhyyok1LI1S"}
-{"$$deleted":true,"_id":"JmfQ1maH0e8LPrxX"}
-{"$$deleted":true,"_id":"OHlD3PsRBTMU6FOy"}
-{"$$deleted":true,"_id":"QnjCnRMip9lDc2rN"}
-{"$$deleted":true,"_id":"TpyxNZjnkRw7hp1z"}
-{"$$deleted":true,"_id":"Ts0hDId3Ij6ivz4d"}
-{"$$deleted":true,"_id":"XpEaluRb1ebBsM4k"}
-{"$$deleted":true,"_id":"bysIJuGSoL8gdm7V"}
-{"$$deleted":true,"_id":"c2xuGYrch5APFDYk"}
-{"$$deleted":true,"_id":"j3iU3UjDEn5gdvbY"}
-{"$$deleted":true,"_id":"xttzwhm7SSYXWVl1"}
-{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"neolicd","num":0,"_id":"zp6CuPsKEOXZ629o"}
-{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"1","num":1,"_id":"ujxtVU8DHOB4iecx"}
-{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"2","num":2,"_id":"icZKyq6tWGSS8jWk"}
-{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"3","num":3,"_id":"iAWgtNTBFeLY0JaL"}
-{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"4","num":4,"_id":"wvWOIV6tpBQNdmCC"}
-{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"5","num":5,"_id":"rpoUA3m3UK238jDg"}
 {"name":"neolicd","time":"8.8.2016 1:3PM","msg":"","num":6,"_id":"0CbTvtDred3iBhiU"}
+{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"3","num":3,"_id":"iAWgtNTBFeLY0JaL"}
+{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"2","num":2,"_id":"icZKyq6tWGSS8jWk"}
 {"name":"neolicd","time":"8.8.2016 1:3PM","msg":"6","num":7,"_id":"neF8qv3r0uz5PNbs"}
+{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"5","num":5,"_id":"rpoUA3m3UK238jDg"}
+{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"1","num":1,"_id":"ujxtVU8DHOB4iecx"}
+{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"4","num":4,"_id":"wvWOIV6tpBQNdmCC"}
+{"name":"neolicd","time":"8.8.2016 1:3PM","msg":"neolicd","num":0,"_id":"zp6CuPsKEOXZ629o"}
+{"$$deleted":true,"_id":"0CbTvtDred3iBhiU"}
+{"$$deleted":true,"_id":"iAWgtNTBFeLY0JaL"}
+{"$$deleted":true,"_id":"icZKyq6tWGSS8jWk"}
+{"$$deleted":true,"_id":"neF8qv3r0uz5PNbs"}
+{"$$deleted":true,"_id":"rpoUA3m3UK238jDg"}
+{"$$deleted":true,"_id":"ujxtVU8DHOB4iecx"}
+{"$$deleted":true,"_id":"wvWOIV6tpBQNdmCC"}
+{"$$deleted":true,"_id":"zp6CuPsKEOXZ629o"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"1","num":0,"_id":"mIuGAyQkA6l6dmva"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"2","num":1,"_id":"k3aN19F7ribUqD1x"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"3","num":2,"_id":"ibRN4LSFOeFRTYme"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"4","num":3,"_id":"nz9ttK4u6pVsmXJW"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"5","num":4,"_id":"7zotGZal2oue1wLV"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"6","num":5,"_id":"LQj0jQYwYcaoj5cq"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"7","num":6,"_id":"UXgiUkDFBUm3GemG"}
+{"name":"neolicd","time":"08.08.2016 3:47PM","msg":"","num":7,"_id":"Aj3BVr2ks3Pop0yG"}

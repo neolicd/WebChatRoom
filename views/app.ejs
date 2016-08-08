@@ -39,7 +39,15 @@
                 h -= 12;
                 ap = 'PM';
             }
-            return date.getMonth() + 1 + '.' + date.getDate() + '.' +date.getFullYear() +
+            var m = date.getMonth() + 1;
+            if(m < 10){
+                m = '0' + m;
+            }
+            var d = date.getDate();
+            if(d < 10) {
+                d = '0' + d;
+            }
+            return m + '.' + d + '.' +date.getFullYear() +
                     ' ' + h + ':' + date.getMinutes() + ap;
         };
 
