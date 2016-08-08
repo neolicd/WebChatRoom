@@ -6,10 +6,8 @@
 </head>
 <body>
     <div class="main">
-        <span class="words">
-            <ul id="messages"></ul>
-            <textarea id="m"></textarea>
-        </span>
+        <ul id="messages"></ul>
+        <textarea id="m"></textarea>
         <span class="btn">
             <button>POST</button>
         </span>
@@ -41,7 +39,7 @@
                 h -= 12;
                 ap = 'PM';
             }
-            return date.getMonth() + '.' + date.getDate() + '.' +date.getFullYear() +
+            return date.getMonth() + 1 + '.' + date.getDate() + '.' +date.getFullYear() +
                     ' ' + h + ':' + date.getMinutes() + ap;
         };
 

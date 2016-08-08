@@ -15,16 +15,8 @@
     align-items: center;
 }
 
-.words {
-    width: 100%;
-    border: 1px solid green;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
 
-.words #messages {
+#messages {
     width: 90%;
     flex: 5;
     border: 1px solid orange;
@@ -68,7 +60,7 @@ li .name,.time,p{
 }
 
 
-.words textarea {
+textarea {
     width: 90%;
     font-size: 30px;
     background-color: #A9E2F3;
@@ -84,6 +76,7 @@ li .name,.time,p{
     border: 1px solid yellow;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #D8D8D8;
     margin: 10px;
 }
