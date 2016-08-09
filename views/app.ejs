@@ -19,6 +19,7 @@
     <!-- <script  src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
     <script>
         var Method = {};
+        //modify the message format
         Method.formatMessage = function(item) {
             return '<li>' + '<div class="header">' +
                                 '<span class="name">' + item.name + '</span>' + 
@@ -29,6 +30,7 @@
                   '</li>';
         };
 
+        //modify the date format
         Method.formatDate = function(date) {
             var h = date.getHours();
             var ap = '';
@@ -50,15 +52,18 @@
             return m + '.' + d + '.' +date.getFullYear() +
                     ' ' + h + ':' + date.getMinutes() + ap;
         };
-
+        //Sock class is for socket management
         var Sock = function () {
             this.socket = io();
         };
 
+        //set the userID
         Sock.prototype.setUserID = function(uID) {
             this.uID = uID;
         }
 
+
+        //if click the submit button, send the sever a message together with user ID and date
         Sock.prototype.setSubmitAction = function() {
             var __this = this;
             $('button').click(function() {
@@ -67,6 +72,7 @@
             });
         };
 
+        //if receive 'chat message', append it to the chat box
         Sock.prototype.setReceiveAction = function() {
             this.socket.on('chat message',function(item){
                 var $messages = $('#messages');

@@ -1,23 +1,30 @@
 var Chat = function() {};
 
+
+//Intialization
 Chat.prototype.init = function() {
+    //initialize express, http and socket.io modules
     this.express = require('express');
     this.app = this.express();
     this.http = require('http').Server(this.app);
     this.io = require('socket.io')(this.http);
+
+    //for ordering the database items
     this.nextItemNum = 0;
 
+    //for parse cookie
     var cookieParser = require('cookie-parser');
     this.app.use(cookieParser());
 
 
-
+    //Initialize database
     var Datastore = require('nedb');
     this.db = new Datastore({filename: 'database/record'});
     this.db.loadDatabase(function(err){
         if(err) throw err;
     });
 
+    //clear the existing database record
     this.db.remove({}, {multi:true}, function(err, numRemoved) {
         if(err) throw err;
     });
@@ -25,20 +32,26 @@ Chat.prototype.init = function() {
 
 
 
-    
+    //set static folder
     this.app.use(this.express.static('public'));
     this.app.set('view engine', 'ejs');
 
+    //for parsing post request
     var bodyParser = require('body-parser');
     this.app.use(bodyParser.urlencoded({extended:false}));
     this.app.use(bodyParser.json());
 };
 
+
+//if request for '/' without cookies, send the login page
+//if request for '/' with cookies, redirect to the chatroom
 Chat.prototype.setLoginPage = function(fileName) {
     this.app.get('/', function(req, res) {
+        //if no cookie, send login page
         if(Object.keys(req.cookies) == 0) {
             res.render(fileName);
         }
+        //if have cookie, redirect to chatroom
         else {
             res.render('redirect', {
                 uID: req.cookies.cookieUID
@@ -47,6 +60,10 @@ Chat.prototype.setLoginPage = function(fileName) {
     });
 };
 
+
+//if use POST method to request for '/main'
+//then send the cookie {cookieUID: [user's typein]}
+//and send the chat page
 Chat.prototype.setMainPage = function(fileName) {
     this.app.post('/main', function(req, res) {
         res.cookie('cookieUID', req.body.uID, {maxAge: 2 * 60 *1000});
@@ -58,9 +75,15 @@ Chat.prototype.setMainPage = function(fileName) {
     });
 };
 
+
+//if a new client connects to the server
+//then create a socket at the server side
+//and send the chat record using database
+//and append a event listener {if an item named 'chat message' comes, broadcast it to all} 
 Chat.prototype.setBroadCast = function() {
     var __this = this;
     __this.io.on('connection', function(socket){
+        //send chat record
         __this.db.find({}).sort({num:1}).exec(function(err, docs) {
             if(err) throw err;
             var len = docs.length;
@@ -70,6 +93,7 @@ Chat.prototype.setBroadCast = function() {
             }
         });
 
+        //append event listener
         socket.on('chat message', function(item){
             item.num = __this.nextItemNum++;
             __this.db.insert(item);
@@ -78,6 +102,8 @@ Chat.prototype.setBroadCast = function() {
     });
 };
 
+
+//listen to port: portNum
 Chat.prototype.listen = function(portNum) {
     this.http.listen(portNum, function() {
         console.log("The application is running on port:" + portNum);
