@@ -106,13 +106,15 @@ Chat.prototype.setBroadCast = function() {
 
 
         //send chat record
-        __this.db.find({}).sort({num:1}).exec(function(err, docs) {
+
+        var timeStamp = __this.mapUserTime[userID];
+        __this.db.find({num: {$gte: timeStamp}}).sort({num:1}).exec(function(err, docs) {
             if(err) throw err;
             var len = docs.length;
             //console.log(docs);
 
             //send user all the messages from when he/she enter the chat room
-            for(var i = __this.mapUserTime[userID]; i < len; i++) {
+            for(var i = 0; i < len; i++) {
                 socket.emit('chat message', docs[i]);
             }
         });
