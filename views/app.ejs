@@ -19,8 +19,7 @@
     <!-- <script  src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
     <script src="/javascripts/sock.js"></script>
     <script>
-        var socket = new Sock();
-        socket.setUserID('<%= uID %>');
+        var socket = new Sock('<%= uID %>');
         socket.setSubmitAction();
         socket.setReceiveAction();
         //console.log(socket.uID);

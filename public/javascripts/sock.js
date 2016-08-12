@@ -33,14 +33,11 @@ Method.formatDate = function(date) {
             ' ' + h + ':' + date.getMinutes() + ap;
 };
 //Sock class is for socket management
-var Sock = function () {
-    this.socket = io();
+var Sock = function (uID) {
+    this.socket = io("http://127.0.0.1:3000/", {query: "userID="+uID});
+    this.uID = uID;
 };
 
-//set the userID
-Sock.prototype.setUserID = function(uID) {
-    this.uID = uID;
-}
 
 
 //if click the submit button, send the sever a message together with user ID and date

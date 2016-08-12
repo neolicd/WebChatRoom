@@ -12,6 +12,15 @@ Chat.prototype.init = function() {
     //for ordering the database items
     this.nextItemNum = 0;
 
+    //map: userID => socketId
+    this.mapUserSocket = {};
+
+    //map: userID => timePoint
+    this.mapUserTime = {};
+
+    //for recording the entering time point of each user
+    //this.timeMap = {};
+
     //for parse cookie
     var cookieParser = require('cookie-parser');
     this.app.use(cookieParser());
@@ -83,12 +92,27 @@ Chat.prototype.setMainPage = function(fileName) {
 Chat.prototype.setBroadCast = function() {
     var __this = this;
     __this.io.on('connection', function(socket){
+        var userID = socket.handshake.query.userID;
+
+        //record the userID => socketID
+        //and userID => time point the user enter the chat room
+        __this.mapUserSocket[userID] = socket.id;
+        if(__this.mapUserTime[userID] == undefined) {
+            __this.mapUserTime[userID] = __this.nextItemNum;
+        }
+        //console.log(__this.mapUserSocket);
+        //console.log(__this.mapUserTime);
+        //console.log(typeof socket.handshake.query.userID);
+
+
         //send chat record
         __this.db.find({}).sort({num:1}).exec(function(err, docs) {
             if(err) throw err;
             var len = docs.length;
             //console.log(docs);
-            for(var i = 0; i < len; i++) {
+
+            //send user all the messages from when he/she enter the chat room
+            for(var i = __this.mapUserTime[userID]; i < len; i++) {
                 socket.emit('chat message', docs[i]);
             }
         });
@@ -97,6 +121,7 @@ Chat.prototype.setBroadCast = function() {
         socket.on('chat message', function(item){
             item.num = __this.nextItemNum++;
             __this.db.insert(item);
+            //console.log(socket.id);
             __this.io.emit('chat message', item);
         });
     });
