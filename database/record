@@ -1,49 +1,19 @@
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"7","num":6,"_id":"0feX3JqqE8B8D3Bs"}
-{"name":"lily","time":"08.13.2016 6:6AM","msg":"1","num":8,"_id":"BbdkqsumcuXArkno"}
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"1","num":0,"_id":"EJZOb7vyG6xa3Rhd"}
-{"name":"lily","time":"08.13.2016 6:6AM","msg":"7","num":14,"_id":"MeR3NvnzFGtdoVfz"}
-{"name":"lily","time":"08.13.2016 6:6AM","msg":"4","num":11,"_id":"O7gPH6TynpLWl3ZF"}
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"5","num":4,"_id":"PC8dNaIQoqfjulas"}
-{"name":"lily","time":"08.13.2016 6:6AM","msg":"3","num":10,"_id":"RRkIavX91rLmXgks"}
-{"name":"lily","time":"08.13.2016 6:6AM","msg":"5","num":12,"_id":"Wr7iRIwunUQ4eUWQ"}
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"8","num":7,"_id":"WuzjR9AzqrVIjjJH"}
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"4","num":3,"_id":"YwpofTPsBsG4BGDP"}
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"6","num":5,"_id":"coG7Osg6ngRpg7da"}
-{"name":"lily","time":"08.13.2016 6:6AM","msg":"6","num":13,"_id":"e2iWkHB3N55iQOTX"}
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"2","num":1,"_id":"q7ioMYQWbVXbxbNp"}
-{"name":"lily","time":"08.13.2016 6:6AM","msg":"2","num":9,"_id":"qE1ceXsjT1vDcI6w"}
-{"name":"neolicd","time":"08.13.2016 6:5AM","msg":"3","num":2,"_id":"suQWq0Rh6ZDiMHPK"}
-{"$$deleted":true,"_id":"0feX3JqqE8B8D3Bs"}
-{"$$deleted":true,"_id":"BbdkqsumcuXArkno"}
-{"$$deleted":true,"_id":"EJZOb7vyG6xa3Rhd"}
-{"$$deleted":true,"_id":"MeR3NvnzFGtdoVfz"}
-{"$$deleted":true,"_id":"O7gPH6TynpLWl3ZF"}
-{"$$deleted":true,"_id":"PC8dNaIQoqfjulas"}
-{"$$deleted":true,"_id":"RRkIavX91rLmXgks"}
-{"$$deleted":true,"_id":"Wr7iRIwunUQ4eUWQ"}
-{"$$deleted":true,"_id":"WuzjR9AzqrVIjjJH"}
-{"$$deleted":true,"_id":"YwpofTPsBsG4BGDP"}
-{"$$deleted":true,"_id":"coG7Osg6ngRpg7da"}
-{"$$deleted":true,"_id":"e2iWkHB3N55iQOTX"}
-{"$$deleted":true,"_id":"q7ioMYQWbVXbxbNp"}
-{"$$deleted":true,"_id":"qE1ceXsjT1vDcI6w"}
-{"$$deleted":true,"_id":"suQWq0Rh6ZDiMHPK"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"1","num":0,"_id":"LP8LaiAua3X0exag"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"2","num":1,"_id":"vfLdbKsuICX1QEsm"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"","num":2,"_id":"bYJP7JHPMJnYCcnP"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"3","num":3,"_id":"4ZIXw0DRu6qlvfJ8"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"4","num":4,"_id":"iuztl0PGhuzkC9R8"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"5","num":5,"_id":"2747Sl2gCAmejG7I"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"6","num":6,"_id":"W25ClesN6Uq5jPw7"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"7","num":7,"_id":"LfdU6tBm9H6OCuFq"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"8","num":8,"_id":"JjAZ6fzbL34qRYQr"}
-{"name":"neolicd","time":"08.13.2016 6:7AM","msg":"9","num":9,"_id":"6bVxdhQvfHdSAgcn"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"1","num":10,"_id":"UvBkAhdxqf6opoMp"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"2","num":11,"_id":"848yhdteKptQomzs"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"3","num":12,"_id":"30esoC1OVADtonbt"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"4","num":13,"_id":"KzwvbODHOZLU6zvr"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"5","num":14,"_id":"tSVmustD4CgbfZY8"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"6","num":15,"_id":"19KF3qSPmKhdnN27"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"7","num":16,"_id":"eAFy2VXLQz0zUU3n"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"8","num":17,"_id":"K4wx6MPjrABlSkQy"}
-{"name":"lily","time":"08.13.2016 6:8AM","msg":"9","num":18,"_id":"xdhl7BXKa8nIwlV7"}
+{"name":"lily","time":"08.27.2016 1:55PM","msg":"5","num":4,"_id":"26N3oMsRlY59XFIf"}
+{"name":"lily","time":"08.27.2016 1:55PM","msg":"1","num":0,"_id":"5bOGomfl8a87Bkni"}
+{"name":"lily","time":"08.27.2016 1:55PM","msg":"2","num":1,"_id":"PMk9UJaVC1lPYHAK"}
+{"name":"lily","time":"08.27.2016 1:55PM","msg":"3","num":2,"_id":"cRik0zG6UA9vGU1i"}
+{"name":"lily","time":"08.27.2016 1:55PM","msg":"4","num":3,"_id":"xk5CS2QIene7LmSY"}
+{"$$deleted":true,"_id":"26N3oMsRlY59XFIf"}
+{"$$deleted":true,"_id":"5bOGomfl8a87Bkni"}
+{"$$deleted":true,"_id":"PMk9UJaVC1lPYHAK"}
+{"$$deleted":true,"_id":"cRik0zG6UA9vGU1i"}
+{"$$deleted":true,"_id":"xk5CS2QIene7LmSY"}
+{"name":"lily","time":"08.27.2016 1:55PM","msg":"1","num":0,"_id":"bBnvNw8RrxnAJM3r"}
+{"name":"lily","time":"08.27.2016 1:57PM","msg":"2","num":1,"_id":"7ZIiWrCjts5ikApm"}
+{"name":"lily","time":"08.27.2016 1:57PM","msg":"3","num":2,"_id":"BBh6ZuA2GWucbxbt"}
+{"name":"lily","time":"08.27.2016 1:57PM","msg":"4","num":3,"_id":"vWxocVzUXlpH0wFL"}
+{"name":"lily","time":"08.27.2016 1:57PM","msg":"5","num":4,"_id":"CmSnXzDviuWqyT5j"}
+{"name":"lily","time":"08.27.2016 1:58PM","msg":"1","num":5,"_id":"2QcfQrUKOCE44eR5"}
+{"name":"lily","time":"08.27.2016 1:58PM","msg":"2","num":6,"_id":"P0tYncAFgobCNYEC"}
+{"name":"lily","time":"08.27.2016 1:58PM","msg":"3","num":7,"_id":"T4IWIOECn8MZaOJe"}
+{"name":"lily","time":"08.27.2016 1:58PM","msg":"4","num":8,"_id":"aVyODruBC5GPpYBd"}

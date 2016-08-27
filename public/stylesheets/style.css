@@ -8,7 +8,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,7 +19,7 @@
 #messages {
     width: 90%;
     flex: 5;
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
     margin-top: 30px;
     overflow-y: scroll;
 }
@@ -28,11 +28,12 @@
 #messages li {
     background-color: #F2F2F2;
     list-style-type: none;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: flex;
     flex-direction: column;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 li .header {
@@ -41,22 +42,24 @@ li .header {
 }
 
 .header .name {
-    margin: 5px;
+    margin: 15px;
     font-weight: bold;
     color: #6E6E6E;
 }
 
 .header .time {
     color: #A4A4A4;
+    margin: 15px;
 }
 
 li p {
-    margin: 10px;
+    margin: 15px;
+    margin-top: 0;
     color: #848484;
 }
 
 li .name,.time,p{
-    border: 1px solid brown;
+    /*border: 1px solid brown;*/
 }
 
 
@@ -73,7 +76,7 @@ textarea {
 
 .btn {
     width: 100%;
-    border: 1px solid yellow;
+    /*border: 1px solid yellow;*/
     display: flex;
     justify-content: center;
     align-items: center;
