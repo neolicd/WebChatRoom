@@ -19,7 +19,7 @@
 #messages {
     width: 90%;
     flex: 5;
-    /*border: 1px solid orange;*/
+    border: 1px solid orange;
     margin-top: 30px;
     overflow-y: scroll;
 }
